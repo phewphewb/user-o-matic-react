@@ -1,0 +1,7 @@
+@import "../../styles/layers.scss";
+
+.user-list__container {
+  margin: 0;
+  padding: 0;
+  z-index: $user-list-z-index;
+}

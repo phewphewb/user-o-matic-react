@@ -1,0 +1,30 @@
+@import "../../styles/variables.scss";
+
+header {
+  display: flex;
+  height: $header-height;
+  width: 100%;
+  background-color: var(--header-background);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.left-panel {
+  width: 30%;
+  padding-top: 10px;
+  align-items: flex-end;
+}
+.central-panel {
+  width: 40%;
+  justify-content: center;
+  text-align: center;
+  padding-top: 10px;
+}
+.right-panel {
+  width: 30%;
+  flex-grow: 1;
+  flex-shrink: 1;
+  padding-top: 10px;
+}

@@ -1,0 +1,23 @@
+@import "../../../styles/layers.scss";
+
+.modal-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  justify-content: center;
+  align-content: center;
+  display: flex;
+}
+.modal-container {
+  margin: auto;
+  min-width: 320px;
+  min-height: 100px;
+  padding: 20px;
+  text-align: center;
+  z-index: $modal-z-index;
+  background-color: var(--background);
+  border-radius: 20px;
+  overflow: hidden;
+}

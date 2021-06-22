@@ -1,0 +1,15 @@
+.tab {
+  display: flex;
+  flex-direction: column;
+  width: 370px;
+  box-sizing: border-box;
+  padding-right: 10px;
+  &:last-child {
+    padding-right: 0px;
+  }
+}
+
+.tab__load-more {
+  align-self: center;
+  margin-bottom: 10px;
+}

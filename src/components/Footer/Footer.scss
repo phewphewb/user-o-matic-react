@@ -1,0 +1,13 @@
+@import "../../styles/variables.scss";
+
+footer {
+  display: flex;
+  bottom: 0;
+  justify-content: center;
+  width: 100%;
+  background-color: black;
+  height: $footer-height;
+  span {
+    color: white !important;
+  }
+}

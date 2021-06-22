@@ -1,0 +1,24 @@
+.button-base {
+  background-color: var(--btn-background);
+  border-radius: 5px;
+  color: var(--btn-text);
+  outline: none;
+  border: none;
+  cursor: pointer;
+  min-width: 75px;
+  padding: 8px 5px;
+  margin: 5px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.button-base:disabled {
+  color: var(--disabled);
+}
+.button-base:hover {
+  filter: brightness(0.8);
+}
+
+.button-base.active {
+  filter: brightness(0.4);
+}

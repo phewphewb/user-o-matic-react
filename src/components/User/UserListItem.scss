@@ -1,0 +1,21 @@
+.user-li__container {
+  display: flex;
+  margin-bottom: 10px;
+  padding: 5px;
+  height: 70px;
+  width: 350px;
+  background-color: var(--card-background);
+  border-radius: 15px;
+}
+.user-li__content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  margin-left: 24px;
+}
+.user-li__btn-container {
+  display: flex;
+  margin-left: -5px;
+}

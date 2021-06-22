@@ -1,0 +1,17 @@
+input {
+  border: none;
+  padding: 15px;
+  border-radius: 7px;
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  text-align: start;
+  appearance: textfield;
+  outline: none;
+  margin-bottom: 5px;
+}
+input::placeholder {
+  color: var(--text-secondary);
+}
