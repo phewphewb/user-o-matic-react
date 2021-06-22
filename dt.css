@@ -1,0 +1,14 @@
+:root {
+  --primary: #e4e2e2;
+  --secondary: #871e29;
+
+  --text-default: #ffffff;
+  --text-secondary: #575757;
+
+  
+  --background: #1b262c;
+  --header-background: #414141;
+  --card-background: #303d44;
+  --btn-background: #bfbfbf;
+  --btn-text: #1b262c;
+}
