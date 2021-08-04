@@ -11,9 +11,13 @@ export default function UserList({ selectedTimes, users, filteredIds }) {
   const modalRef = useRef(null);
 
   const clickSelect = useCallback(
-    async (e) => {
+    (isSelected) => async (e) => {
       const time = new Date().getTime();
       const id = e.target.id;
+      if (!isSelected) {
+        dispatch(usersActions.toggleSelectUser(id, time));
+        return;
+      }
       try {
         const isSure = await modalRef.current.open();
         if (isSure) {
@@ -33,16 +37,19 @@ export default function UserList({ selectedTimes, users, filteredIds }) {
           const user = users[userId];
           let time = null;
           const selectedTime = selectedTimes[userId];
+          let isSelected = false;
           if (selectedTime) {
             const date = new Date(selectedTime);
             time = getClockTime(date);
+            isSelected = true;
           }
           return (
             <UserListItem
               key={user.login.uuid}
+              isSelected={isSelected}
               user={user}
               time={time}
-              clickSelect={clickSelect}
+              clickSelect={clickSelect(isSelected)}
               showButtons
             />
           );

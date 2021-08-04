@@ -5,7 +5,7 @@ import "./UserListItem.scss";
 import Button from "../UI/button/Button";
 
 const UserListItem = React.memo(
-  ({ user, time, showButtons, clickSelect }) => {
+  ({ user, time, isSelected, showButtons, clickSelect }) => {
     const { picture, name, login } = user;
     const { path } = useRouteMatch();
     const location = useLocation();
@@ -20,12 +20,12 @@ const UserListItem = React.memo(
           </Link>
           {showButtons && (
             <>
-              <p className="text-secondary caption">{time} &nbsp;</p>
+              <span className="text-secondary caption">{time} &nbsp;</span>
               <div className="user-li__btn-container">
                 <Button
                   id={login.uuid}
                   onClick={clickSelect}
-                  title={time ? "Deselect" : "Select"}
+                  title={isSelected ? "Deselect" : "Select"}
                 />
                 <Link
                   to={{

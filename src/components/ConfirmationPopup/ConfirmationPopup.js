@@ -10,7 +10,7 @@ const ConfirmationPopup = withModalPromisify(({ resolve, reject }) => {
       <span className="conf-popup__title">Are you sure?</span>
       <div className="conf-popup__btns">
         <Button onClick={() => reject("Cancel")}>Cancel</Button>
-        <Button onClick={() => resolve(true)}>Ok</Button>
+        <Button onClick={() => resolve(true)}>Yes</Button>
       </div>
     </Modal>
   );
