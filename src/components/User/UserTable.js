@@ -7,7 +7,7 @@ import Tab from "../UI/tab/Tab";
 import UserList from "./UserList";
 import "./UserTable.scss";
 
-const filterIds = (ids, users, search) => {
+const filterWithSearch = (ids, users, search) => {
   const searchString = search.trim().toLowerCase();
   if (searchString === "") {
     return ids;
@@ -25,21 +25,17 @@ const filterIds = (ids, users, search) => {
 const UserTable = () => {
   const dispatch = useDispatch();
   const { search, handleSearchChange } = useSearch();
-  const { users, userIds, selectedIds, selectedTimes } = useSelector((state) => state.users);
+  const { users, userIds, selectedIds, selectedTimes } = useSelector(
+    (state) => state.users
+  );
 
   const filteredUsers = useMemo(() => {
-    return filterIds(userIds, users, search);
+    return filterWithSearch(userIds, users, search);
   }, [search, users, userIds]);
 
   const filteredSelectedUsers = useMemo(() => {
-    const filteredIds = filterIds(selectedIds, users, search);
-    const sorted = filteredIds.sort((a, b) => {
-      const atime = selectedTimes[a];
-      const btime = selectedTimes[b];
-      return btime - atime;
-    });
-    return sorted;
-  }, [search, users, selectedIds, selectedTimes]);
+    return filterWithSearch(selectedIds, users, search);
+  }, [search, users, selectedIds]);
 
   const clickLoadMore = () => {
     dispatch(usersActions.loadNextPage());
@@ -57,7 +53,11 @@ const UserTable = () => {
       </div>
       <div className="row">
         <Tab onLoadMore={clickLoadMore} title="All users">
-          <UserList selectedTimes={selectedTimes} users={users} filteredIds={filteredUsers} />
+          <UserList
+            selectedTimes={selectedTimes}
+            users={users}
+            filteredIds={filteredUsers}
+          />
         </Tab>
         <Tab title="Selected users">
           <UserList

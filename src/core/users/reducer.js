@@ -43,7 +43,7 @@ function toggleUserSelection(state, toggleId, time) {
     updatedSelectedIds = state.selectedIds.filter((id) => id !== toggleId);
     delete updatedSelectedTimes[toggleId];
   } else {
-    updatedSelectedIds.push(toggleId);
+    updatedSelectedIds.unshift(toggleId);
     updatedSelectedTimes[toggleId] = time;
   }
   return { ...state, selectedIds: updatedSelectedIds, selectedTimes: updatedSelectedTimes };
