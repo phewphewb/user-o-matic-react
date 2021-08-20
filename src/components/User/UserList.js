@@ -37,9 +37,8 @@ export default function UserList({ selectedTimes, users, filteredIds }) {
       <ul className="col user-list__container">
         {filteredIds.map((userId) => {
           const user = users[userId];
-          let time = null;
           const selectedTime = selectedTimes[userId];
-          let isSelected = false;
+          let time, isSelected = false;
           if (selectedTime) {
             const date = new Date(selectedTime);
             time = getClockTime(date);
