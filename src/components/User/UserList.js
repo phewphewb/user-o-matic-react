@@ -5,8 +5,10 @@ import UserListItem from "./UserListItem";
 import "./UserList.scss";
 import { getClockTime } from "../../hooks";
 import ConfirmationPopup from "../ConfirmationPopup/ConfirmationPopup";
+import { useLocation } from "react-router-dom";
 
 export default function UserList({ selectedTimes, users, filteredIds }) {
+  const location = useLocation();
   const dispatch = useDispatch();
   const modalRef = useRef(null);
 
@@ -43,14 +45,20 @@ export default function UserList({ selectedTimes, users, filteredIds }) {
             time = getClockTime(date);
             isSelected = true;
           }
+          const linkToDetails = `/user/${user.login.uuid}`;
+          const linkToModal = {
+            pathname: linkToDetails,
+            state: { background: location },
+          };
           return (
             <UserListItem
               key={user.login.uuid}
               isSelected={isSelected}
               user={user}
               time={time}
+              linkToModal={linkToModal}
+              linkToDetails={linkToDetails}
               clickSelect={clickSelect(isSelected)}
-              showButtons
             />
           );
         })}

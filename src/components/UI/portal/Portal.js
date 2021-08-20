@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 import { createPortal } from "react-dom";
 const modal = document.getElementById("modal");
+const div = document.createElement("div");
 
 const Portal = ({ children }) => {
-  const div = document.createElement("div");
   useEffect(() => {
     modal.appendChild(div);
     return () => {
