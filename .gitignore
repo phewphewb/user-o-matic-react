@@ -1,2 +1,7 @@
 node_modules
 build
+/.idea/.gitignore
+/.idea/modules.xml
+/.idea/inspectionProfiles/Project_Default.xml
+/.idea/user-o-matic-remix.iml
+/.idea/vcs.xml
